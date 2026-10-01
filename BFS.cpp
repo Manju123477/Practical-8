@@ -12,12 +12,12 @@ void bfsTraversal(const vector<vector<int>>& adjList, int start) {
     visited[start] = true;
     q.push(start);
 
-    cout << "BFS Traversal starting from node " << start << ": ";
+    cout << "BFS Traversal starting from node " << char('A' + start) << ": ";
 
     while (!q.empty()) {
         int node = q.front();
         q.pop();
-        cout << node << " ";
+        cout << char('A' + node) << " ";
         for (int neighbor : adjList[node]) {
             if (!visited[neighbor]) {
                 visited[neighbor] = true;
@@ -30,14 +30,14 @@ void bfsTraversal(const vector<vector<int>>& adjList, int start) {
 
 int main() {
     vector<vector<int>> adjList = {
-        {1, 2},
-        {0, 3},
-        {0, 4},
-        {1, 4},
-        {2, 3}
+        {1, 2},  
+        {0, 3},  
+        {0, 4},  
+        {1, 4}, 
+        {2, 3}   
     };
 
-    int startNode = 0;
+    int startNode = 0; 
     bfsTraversal(adjList, startNode);
 
     return 0;
